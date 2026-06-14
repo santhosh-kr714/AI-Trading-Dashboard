@@ -10,7 +10,6 @@ import {
 
 import { useState } from "react";
 import axios from "axios";
-import CandleChart from "./components/CandleChart";
 
 import {
   LayoutDashboard,
@@ -300,9 +299,9 @@ function App() {
                 🕯️ Candlestick Chart
               </h2>
 
-              <CandleChart
-                data={candleData}
-              />
+              <div style={{ color: "white", padding: "20px" }}>
+  Candlestick Chart Disabled
+</div>
             </div>
 
             {/* AI Verdict */}
