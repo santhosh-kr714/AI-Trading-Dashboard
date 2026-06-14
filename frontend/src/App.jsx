@@ -32,8 +32,8 @@ function App() {
   const loadChart = async (symbol, period) => {
     try {
       const chart = await axios.get(
-        `http://127.0.0.1:8000/chart/${symbol}?period=${period}`
-      );
+  `https://ai-trading-dashboard-glj4.onrender.com/chart/${symbol}?period=${period}`
+);
 
       setChartData(
         Array.isArray(chart.data)
@@ -49,8 +49,8 @@ function App() {
   const loadCandles = async (symbol, period) => {
     try {
       const res = await axios.get(
-        `http://127.0.0.1:8000/candles/${symbol}?period=${period}`
-      );
+  `https://ai-trading-dashboard-glj4.onrender.com/candles/${symbol}?period=${period}`
+);
 
       setCandleData(
         Array.isArray(res.data)
@@ -68,9 +68,8 @@ function App() {
       setLoading(true);
 
       const res = await axios.get(
-        `http://127.0.0.1:8000/stock/${ticker}`
-      );
-
+  `https://ai-trading-dashboard-glj4.onrender.com/stock/${ticker}`
+);
       setData(res.data);
 
       await loadChart(
