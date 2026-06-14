@@ -1,0 +1,133 @@
+/* Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Full screen */
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Root Variables */
+
+:root {
+  --text: #ffffff;
+  --text-h: #ffffff;
+  --bg: #020617;
+  --border: rgba(255, 255, 255, 0.1);
+  --code-bg: #1e293b;
+  --accent: #8b5cf6;
+  --accent-bg: rgba(139, 92, 246, 0.15);
+  --accent-border: rgba(139, 92, 246, 0.5);
+  --social-bg: rgba(255, 255, 255, 0.05);
+
+  --shadow:
+    rgba(0, 0, 0, 0.35)
+    0px 20px 60px;
+
+  --sans:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+
+  font-family: var(--sans);
+  color: var(--text);
+  background: var(--bg);
+  color-scheme: dark;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Body */
+
+body {
+  background:
+    linear-gradient(
+      135deg,
+      #020617,
+      #071133,
+      #1e1b4b
+    );
+
+  color: white;
+  min-height: 100vh;
+}
+
+/* Make app use full browser width */
+
+#root {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+/* Typography */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: white;
+  font-weight: 600;
+}
+
+p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+input,
+button {
+  outline: none;
+  border: none;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6366f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8b5cf6;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
