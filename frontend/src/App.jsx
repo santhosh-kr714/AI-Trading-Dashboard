@@ -432,13 +432,12 @@ const page = {
     "linear-gradient(135deg,#020617,#071133,#1e1b4b)",
   color: "white",
 };
-
+const isMobile = window.innerWidth < 768;
 const sidebar = {
-  width: "280px",
-  background:
-    "rgba(255,255,255,0.05)",
+  width: isMobile ? "90px" : "280px",
+  background: "rgba(255,255,255,0.05)",
   backdropFilter: "blur(20px)",
-  padding: "30px",
+  padding: isMobile ? "15px" : "30px",
 };
 
 const main = {
@@ -447,8 +446,8 @@ const main = {
 };
 
 const title = {
-  textAlign: "center",
-  fontSize: "70px",
+   textAlign: "center",
+  fontSize: isMobile ? "35px" : "70px",
 };
 
 const searchArea = {
@@ -533,9 +532,10 @@ const newsCard = {
 const sidebarItem = {
   display: "flex",
   gap: "15px",
-  marginTop: "40px",
-  fontSize: "28px",
+  marginTop: "25px",
+  fontSize: isMobile ? "18px" : "28px",
   cursor: "pointer",
+  alignItems: "center",
 };
 
 const periodContainer = {
