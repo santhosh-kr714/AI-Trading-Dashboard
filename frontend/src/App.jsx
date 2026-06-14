@@ -426,7 +426,7 @@ function SidebarItem({
 
 const page = {
   minHeight: "100vh",
-  display: "flex",
+  display: window.innerWidth < 768 ? "block" : "flex",
   width: "100%",
   background:
     "linear-gradient(135deg,#020617,#071133,#1e1b4b)",
@@ -434,15 +434,35 @@ const page = {
 };
 const isMobile = window.innerWidth < 768;
 const sidebar = {
-  width: isMobile ? "90px" : "280px",
-  background: "rgba(255,255,255,0.05)",
-  backdropFilter: "blur(20px)",
-  padding: isMobile ? "15px" : "30px",
+  width:
+    isMobile
+      ? "100%"
+      : "280px",
+  display:
+    isMobile
+      ? "flex"
+      : "block",
+  justifyContent:
+    isMobile
+      ? "space-around"
+      : "normal",
+  alignItems: "center",
+  padding:
+    isMobile
+      ? "15px"
+      : "30px",
+  background:
+    "rgba(255,255,255,0.05)",
+  backdropFilter:
+    "blur(20px)",
 };
 
 const main = {
   flex: 1,
-  padding: "40px",
+  padding:
+    isMobile
+      ? "20px"
+      : "40px",
 };
 
 const title = {
@@ -456,16 +476,17 @@ const searchArea = {
 };
 
 const searchBox = {
-  width: "60%",
-  padding: "20px",
+  width: isMobile ? "95%" : "60%",
+  padding: isMobile ? "15px" : "20px",
   borderRadius: "20px",
   border: "none",
-  fontSize: "20px",
+  fontSize: isMobile ? "16px" : "20px",
 };
 
 const button = {
-  padding: "20px",
-  marginLeft: "20px",
+  padding: isMobile ? "15px" : "20px",
+  marginLeft: isMobile ? "0px" : "20px",
+  marginTop: isMobile ? "15px" : "0px",
   borderRadius: "20px",
   border: "none",
   background:
@@ -476,7 +497,9 @@ const button = {
 const topGrid = {
   display: "grid",
   gridTemplateColumns:
-    "repeat(4, 1fr)",
+    isMobile
+      ? "1fr"
+      : "repeat(4, 1fr)",
   gap: "30px",
   marginTop: "30px",
 };
@@ -484,7 +507,9 @@ const topGrid = {
 const secondGrid = {
   display: "grid",
   gridTemplateColumns:
-    "repeat(4, 1fr)",
+    isMobile
+      ? "1fr"
+      : "repeat(4, 1fr)",
   gap: "30px",
   marginTop: "30px",
 };
@@ -492,23 +517,34 @@ const secondGrid = {
 const thirdGrid = {
   display: "grid",
   gridTemplateColumns:
-    "repeat(2, 1fr)",
+    isMobile
+      ? "1fr"
+      : "repeat(2, 1fr)",
   gap: "30px",
   marginTop: "30px",
-  width: "50%",
+  width:
+    isMobile
+      ? "100%"
+      : "50%",
 };
 
 const card = {
   background:
     "rgba(255,255,255,0.05)",
   backdropFilter: "blur(20px)",
-  padding: "35px",
+  padding:
+  isMobile
+    ? "20px"
+    : "35px",
   borderRadius: "30px",
   textAlign: "center",
 };
 
 const valueStyle = {
-  fontSize: "40px",
+  fontSize:
+    isMobile
+      ? "28px"
+      : "40px",
   fontWeight: "bold",
 };
 
