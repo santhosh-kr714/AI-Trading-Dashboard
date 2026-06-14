@@ -45,9 +45,14 @@ function CandleChart({ data = [] }) {
 
   const xAccessor = (d) => d.date;
 
+  const start =
+    chartData[Math.max(0, chartData.length - 100)];
+
+  const end = chartData[chartData.length - 1];
+
   const xExtents = [
-    chartData[Math.max(0, chartData.length - 100)],
-    chartData[chartData.length - 1],
+    xAccessor(start),
+    xAccessor(end),
   ];
 
   return (
@@ -58,13 +63,17 @@ function CandleChart({ data = [] }) {
         background: "#111827",
         borderRadius: "20px",
         padding: "10px",
-        overflow: "hidden",
+        overflowX: "auto",
       }}
     >
       <ChartCanvas
         height={630}
-        width={1200}
-        ratio={1}
+        width={
+          window.innerWidth < 768
+            ? window.innerWidth - 40
+            : 1200
+        }
+        ratio={window.devicePixelRatio || 1}
         margin={{
           left: 70,
           right: 70,
@@ -72,9 +81,9 @@ function CandleChart({ data = [] }) {
           bottom: 40,
         }}
         data={chartData}
-        displayXAccessor={xAccessor}
         xAccessor={xAccessor}
-        xScale={scaleTime()}
+        displayXAccessor={xAccessor}
+        xScale={scaleTime}
         xExtents={xExtents}
         seriesName="Stock"
       >
